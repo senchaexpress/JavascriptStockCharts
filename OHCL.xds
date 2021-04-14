@@ -1,0 +1,63 @@
+{
+    "name": "OHCL",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "7.3.0.19",
+            "frameworkVersion": "7.3.0.55"
+        },
+        "urlPrefixTemplate": "http://localhost:34067/{path}",
+        "urlPrefix": "http://localhost:34067/",
+        "exportPath": "",
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "sdkPath": "",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app",
+            "buildPlatform": false
+        }
+    },
+    "xdsVersion": "4.2.9",
+    "xdsBuild": 443,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext73",
+    "viewOrderMap": {
+        "view": [
+            "b98b52a3-2227-40eb-85f5-aaf82ff29415",
+            "bb5af113-2f75-4894-b3df-7cef3d9578bf",
+            "f8156f5a-b4de-44f4-84ed-545ce1122e7b"
+        ],
+        "store": [
+            "0952d027-fcb2-4b3d-a354-40ff5286d750"
+        ],
+        "controller": [
+            "9f026b86-3466-4ec7-afd6-bd79427aa6c3"
+        ],
+        "model": [
+            "89f15601-dd44-482e-bf10-a258504cb051"
+        ],
+        "resource": [
+            "af487831-8e5c-493e-8307-139cf9c51a84",
+            "2ca44326-c97d-41d5-a114-5a5eb7754860",
+            "21947447-eea4-4dd9-b1a9-78296f966194"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
