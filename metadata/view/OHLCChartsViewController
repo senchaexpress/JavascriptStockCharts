@@ -1,0 +1,194 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "ohlccharts",
+        "designer|userClassName": "OHLCChartsViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "f8156f5a-b4de-44f4-84ed-545ce1122e7b",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "func",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "startDate",
+                    "endDate",
+                    "tickerType"
+                ],
+                "fn": "updateUI",
+                "implHandler": [
+                    "console.log(startDate, endDate, tickerType);",
+                    "if(!startDate || !endDate){",
+                    "    startDate = '2020-01-01';",
+                    "    endDate = '2020-12-31';",
+                    "}",
+                    "if(this.isVaildPeriod(startDate, endDate)) {",
+                    "    var mycandlestickchart = Ext.ComponentQuery.query('#mycandlestickchart')[0];",
+                    "    var store = mycandlestickchart.getStore();",
+                    "    var marketstackStore = Ext.getStore(\"marketstackStore\");",
+                    "",
+                    "    marketstackStore.proxy.extraParams.date_from = startDate;",
+                    "    marketstackStore.proxy.extraParams.date_to = endDate;",
+                    "    marketstackStore.proxy.extraParams.symbols = tickerType;",
+                    "",
+                    "    marketstackStore.load({",
+                    "        scope:this,",
+                    "        callback: function(records, operation, success) {",
+                    "            console.log(\"records\", records);",
+                    "            store.setData(records);",
+                    "            console.log(\"getData\", store.getData());",
+                    "        }",
+                    "    });",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "designer|params": "typedarray"
+            },
+            "name": "updateUI",
+            "designerId": "b421d4a5-abbe-4be0-8ab4-3835c45b92e8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "startDate",
+                    "endDate"
+                ],
+                "fn": "isVaildPeriod",
+                "implHandler": [
+                    "startDate = new Date(startDate);",
+                    "endDate = new Date(endDate);",
+                    "",
+                    "if(startDate.getTime() > endDate.getTime()) {",
+                    "    var temp = endDate;",
+                    "    endDate = startDate;",
+                    "    startDate = temp;",
+                    "}",
+                    "",
+                    "// console.log(\"endDate - startDate\", endDate - startDate);",
+                    "",
+                    "var days = Math.round((endDate - startDate) / (24 * 3600 * 1000));",
+                    "// console.log(\"days\", days);",
+                    "if(days > 1000 || days === 0) {",
+                    "    Ext.Msg.alert('Alert', 'You can see only for a year(365days)', Ext.emptyFn);",
+                    "    return false;",
+                    "} else {",
+                    "    return true;",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "isVaildPeriod",
+            "designerId": "a27f16b6-d643-4802-96b1-172f4e38541c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initMarketStackStore",
+                "implHandler": [
+                    "Ext.create('Ext.data.Store', {",
+                    "    id         : 'marketstackStore',",
+                    "    model      : 'Demo.model.HomeModel',",
+                    "    autoLoad   : true,",
+                    "    autoDestroy: true,",
+                    "    proxy: {",
+                    "        type: 'rest',",
+                    "        url : 'https://api.marketstack.com/v1/eod',",
+                    "        useDefaultXhrHeader: false, // <= HERE",
+                    "        extraParams: {",
+                    "            access_key: 'c611bbc77b83810b23b0871dca45fb7e',",
+                    "            symbols: 'AAPL',",
+                    "            date_from: '2021-03-31',",
+                    "            date_to: '2021-04-10',",
+                    "            limit: 1000",
+                    "        },",
+                    "        reader: {",
+                    "            type           : 'json',",
+                    "            headers: {'Accept': 'application/json'},",
+                    "            totalProperty  : 'total',",
+                    "            successProperty: 'success',",
+                    "            messageProperty: 'message',",
+                    "            transform: function(response){",
+                    "                // console.log(\"data\", data);",
+                    "                var data = response.data.slice();",
+                    "                data = data.map((dataForDay) => {",
+                    "//                     console.log(\"before\", dataForDay);",
+                    "                    dataForDay.date = new Date(dataForDay.date).getTime();",
+                    "//                     console.log(\"after\", dataForDay);",
+                    "                    return dataForDay;",
+                    "                });",
+                    "                return data;",
+                    "            }",
+                    "        }",
+                    "    }, // <= and notice this change",
+                    "    fields: [",
+                    "        {",
+                    "            type: 'float',",
+                    "            name: 'high'",
+                    "        },",
+                    "        {",
+                    "            type: 'float',",
+                    "            name: 'low'",
+                    "        },",
+                    "        {",
+                    "            type: 'int',",
+                    "            name: 'date'",
+                    "        },",
+                    "        {",
+                    "            type: 'float',",
+                    "            name: 'close'",
+                    "        },",
+                    "        {",
+                    "            type: 'float',",
+                    "            name: 'open'",
+                    "        }",
+                    "    ]",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "initMarketStackStore",
+            "designerId": "b649bc05-c3ed-4e83-bf54-62f4ca1ec895"
+        }
+    ]
+}

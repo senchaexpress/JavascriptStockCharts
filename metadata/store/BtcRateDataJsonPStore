@@ -1,0 +1,206 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "alternateClassName": [
+            "btcratedatastore"
+        ],
+        "designer|userAlias": "BtcRateDataStore",
+        "designer|userClassName": "BtcRateDataJsonPStore",
+        "model": "HomeModel",
+        "storeId": "BtcRateDataJsonPStore"
+    },
+    "configAlternates": {
+        "alternateClassName": "typedarray",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string",
+        "data": "array"
+    },
+    "name": "MyJsonPStore",
+    "designerId": "0952d027-fcb2-4b3d-a354-40ff5286d750",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoAppendParams": false,
+                "cacheString": "''",
+                "directionParam": "''",
+                "extraParams": [
+                    "{\"access_key\": \"c611bbc77b83810b23b0871dca45fb7e\", \"symbols\": \"AAPL\", \"date_from\": \"2021-03-31\", \"date_to\": \"2021-04-10\", \"limit\": 1000}"
+                ],
+                "limitParam": "''",
+                "pageParam": "''",
+                "sortParam": "''",
+                "startParam": "''",
+                "url": "https://api.marketstack.com/v1/eod"
+            },
+            "configAlternates": {
+                "url": "string",
+                "extraParams": "object",
+                "autoAppendParams": "boolean",
+                "directionParam": "string",
+                "filterParam": "string",
+                "groupDirectionParam": "string",
+                "groupParam": "string",
+                "idParam": "string",
+                "limitParam": "string",
+                "pageParam": "string",
+                "sortParam": "string",
+                "startParam": "string",
+                "cacheString": "string"
+            },
+            "name": "MyJsonPProxy",
+            "designerId": "dd34c892-9157-42e5-b5c6-a4a763380374",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "https",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data",
+                        "successProperty": "''",
+                        "totalProperty": "''"
+                    },
+                    "configAlternates": {
+                        "record": "binding",
+                        "rootProperty": "string",
+                        "successProperty": "string",
+                        "totalProperty": "string"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "fc539154-d116-4c0f-9f20-1dff466ffcc6",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "data"
+                                ],
+                                "fn": "transform",
+                                "implHandler": [
+                                    "",
+                                    "console.log(\"data\", data);",
+                                    "return data;"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "transform",
+                            "designerId": "efa09816-3711-431d-baf7-fa8667bd9189"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "high"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyNumber2",
+            "designerId": "1c23c960-7bdb-40c0-8c9f-084c82ad3d63"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "low"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyNumber3",
+            "designerId": "c9d403dc-f525-4f9b-8b6a-bb2c441bdaa7"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "date"
+            },
+            "configAlternates": {
+                "name": "string",
+                "dateFormat": "string"
+            },
+            "name": "MyString",
+            "designerId": "9a0c39d0-e3f8-44a9-9aea-8118b973fd1e"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "close"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyNumber12",
+            "designerId": "69331a42-e463-4286-8959-6bd249d404b2"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "open"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyNumber",
+            "designerId": "f27ed9b4-bb4e-4883-a51f-57d2666fc27b"
+        }
+    ]
+}

@@ -1,0 +1,475 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "alternateClassName": [
+            "OHLCCharts"
+        ],
+        "bodyPadding": 0,
+        "designer|initialView": true,
+        "designer|uiInterfaceName": "default",
+        "designer|userAlias": "OHLCCharts",
+        "designer|userClassName": "OHLCCharts",
+        "dock": "top",
+        "frameHeader": false,
+        "height": "100vh",
+        "layout": "fit",
+        "manageHeight": false,
+        "padding": 0,
+        "style": [
+            "{",
+            "background: \"#ffffff\"",
+            "}"
+        ],
+        "width": "100wh"
+    },
+    "configAlternates": {
+        "alternateClassName": "typedarray",
+        "designer|initialView": "boolean",
+        "designer|uiInterfaceName": "string",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "dock": "string",
+        "frame": "boolean",
+        "height": "auto",
+        "layout": "string",
+        "title": "string",
+        "width": "auto",
+        "frameHeader": "boolean",
+        "manageHeight": "boolean",
+        "style": "object",
+        "bodyStyle": "object",
+        "bodyPadding": "auto",
+        "padding": "auto"
+    },
+    "name": "MyPanel",
+    "designerId": "b98b52a3-2227-40eb-85f5-aaf82ff29415",
+    "viewControllerInstanceId": "f8156f5a-b4de-44f4-84ed-545ce1122e7b",
+    "viewModelInstanceId": "bb5af113-2f75-4894-b3df-7cef3d9578bf",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "alignTarget": "",
+                "border": 2,
+                "container|padding": "0 10 0 0",
+                "dock": "top",
+                "style": [
+                    "{",
+                    "background: \"#c6e4aa\"",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "dock": "string",
+                "height": "auto",
+                "style": "object",
+                "alignTarget": "string",
+                "border": "auto",
+                "container|padding": "auto"
+            },
+            "name": "MyToolbar",
+            "designerId": "1a3fa26e-ebfe-4bdc-9109-f88e064745c0",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill",
+                    "designerId": "02401545-87e0-45f9-b40f-2cb5a0639c48"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Ticker",
+                        "id": "tickerInput",
+                        "labelWidth": 40,
+                        "layout|flex": null,
+                        "value": [
+                            "AAPL",
+                            ""
+                        ],
+                        "width": 100
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "labelWidth": "number",
+                        "layout|flex": "number",
+                        "value": "object",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "018cc579-9a19-4234-be6f-7cff78161586"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "From",
+                        "id": "fromDatePicker",
+                        "labelWidth": 50,
+                        "layout|flex": null,
+                        "value": 1577826000000,
+                        "width": 250
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "layout|flex": "number",
+                        "width": "auto",
+                        "labelWidth": "number",
+                        "value": "date"
+                    },
+                    "name": "MyDateField",
+                    "designerId": "e235383a-a01a-454b-8409-438337e33a98"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "To",
+                        "id": "toDatePicker",
+                        "labelWidth": 50,
+                        "layout|flex": null,
+                        "resizable": false,
+                        "value": 1609362000000,
+                        "width": 250
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "layout|flex": "number",
+                        "labelWidth": "number",
+                        "resizable": "boolean",
+                        "width": "auto",
+                        "value": "date"
+                    },
+                    "name": "MyDateField1",
+                    "designerId": "b17d1a28-4a51-40db-a701-2222dc9d4de1"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "refreshBtn",
+                        "layout|flex": null,
+                        "text": "Refresh"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "accd7921-1737-4758-a676-ad5fca38b2d4",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefreshBtnClick",
+                                "implHandler": [
+                                    "var mycandlestickchart = Ext.ComponentQuery.query('#mycandlestickchart')[0];",
+                                    "var fromDatePicker = Ext.ComponentQuery.query('#fromDatePicker')[0];",
+                                    "var fromDate = fromDatePicker.value;",
+                                    "",
+                                    "var toDatePicker = Ext.ComponentQuery.query('#toDatePicker')[0];",
+                                    "var toDate = toDatePicker.value;",
+                                    "",
+                                    "var tickerType = Ext.ComponentQuery.query('#tickerInput')[0].value;",
+                                    "",
+                                    "// console.log(\":tickerType\", tickerType);",
+                                    "// console.log(\"Ext.ComponentQuery.query('#tickerInput')[0]\", Ext.ComponentQuery.query('#tickerInput')[0]);",
+                                    "",
+                                    "if(fromDate && toDate) {",
+                                    "    fromDate = new Date(fromDate);",
+                                    "    toDate = new Date(toDate);",
+                                    "",
+                                    "    if(fromDate > toDate) {",
+                                    "        var temp = toDate;",
+                                    "        toDate = fromDate;",
+                                    "        fromDate = temp;",
+                                    "    }",
+                                    "",
+                                    "    fromDate = Ext.Date.format(fromDate, 'Y-m-d');",
+                                    "    toDate = Ext.Date.format(toDate, 'Y-m-d');",
+                                    "",
+                                    "    this.updateUI(fromDate, toDate, tickerType);",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onRefreshBtnClick",
+                            "designerId": "20324e56-3503-486d-94bc-70f09d0619a0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.chart.CartesianChart",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "colors": [
+                    "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                ],
+                "dock": "top",
+                "height": "85vh",
+                "id": "mycandlestickchart",
+                "innerPadding": [
+                    "{\"top\":0,\"left\":10,\"right\":10,\"bottom\":0}"
+                ],
+                "itemId": "mycandlestickchart",
+                "margin": "0 0 0 0",
+                "store": "BtcRateDataJsonPStore",
+                "width": "100vw"
+            },
+            "configAlternates": {
+                "colors": "array",
+                "dock": "string",
+                "height": "auto",
+                "innerPadding": "object",
+                "store": "store",
+                "width": "auto",
+                "itemId": "string",
+                "margin": "auto",
+                "id": "string"
+            },
+            "name": "MyCandlestickChart",
+            "designerId": "3f5b924c-9672-4c1b-a9a0-2b64bbc61933",
+            "isBuiltIn": true,
+            "iconCls": "icon-candlestick-chart",
+            "autoName": "MyCandlestickChart",
+            "cn": [
+                {
+                    "type": "Ext.chart.axis.Time",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "date"
+                        ],
+                        "id": "bottom"
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "id": "string"
+                    },
+                    "name": "MyTimeAxis",
+                    "designerId": "1836dfd1-3b7c-457d-924a-85aa80ec3f37"
+                },
+                {
+                    "type": "Ext.chart.axis.Numeric",
+                    "reference": {
+                        "name": "axes",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fields": [
+                            "low",
+                            "high",
+                            "close",
+                            "open"
+                        ],
+                        "position": "left",
+                        "title": null
+                    },
+                    "configAlternates": {
+                        "fields": "typedarray",
+                        "grid": "object",
+                        "position": "string",
+                        "title": "string"
+                    },
+                    "name": "MyNumericAxis",
+                    "designerId": "b21a6144-e362-4111-af85-98ef39d17b86"
+                },
+                {
+                    "type": "Ext.chart.series.CandleStick",
+                    "reference": {
+                        "name": "series",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "closeField": "close",
+                        "highField": "high",
+                        "lowField": "low",
+                        "openField": "open",
+                        "style": [
+                            "{",
+                            "    ohlcType: \"ohlc\",",
+                            "    barWidth: 10,",
+                            "    opacity: 0.9,",
+                            "    dropStyle: {",
+                            "        fill: 'rgb(237,123,43)',",
+                            "        stroke: 'rgb(237,123,43)'",
+                            "    },",
+                            "    raiseStyle: {",
+                            "        fill: 'rgb(55,153,19)',",
+                            "        stroke: 'rgb(55,153,19)'",
+                            "    }",
+                            "}"
+                        ],
+                        "xField": "date"
+                    },
+                    "configAlternates": {
+                        "closeField": "datafield",
+                        "highField": "datafield",
+                        "lowField": "datafield",
+                        "openField": "datafield",
+                        "style": "object",
+                        "xField": "datafield"
+                    },
+                    "name": "MyCandleStickSeries",
+                    "designerId": "4b101edc-0fa1-45a0-9c04-15b5252c6bb2"
+                },
+                {
+                    "type": "Ext.chart.interactions.PanZoom",
+                    "reference": {
+                        "name": "interactions",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "axes": [
+                            "{left: {allowPan: false, allowZoom: false }, bottom: { allowPan: true, allowZoom: true}}"
+                        ],
+                        "enabled": false,
+                        "zoomOnPan": true
+                    },
+                    "configAlternates": {
+                        "axes": "object",
+                        "enabled": "boolean",
+                        "zoomOnPan": "boolean"
+                    },
+                    "name": "MyPanZoomInteraction",
+                    "designerId": "f0a161b0-4140-4365-ab2a-df03e3f0fd3c"
+                },
+                {
+                    "type": "Ext.chart.interactions.Crosshair",
+                    "reference": {
+                        "name": "interactions",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "axes": [
+                            "{\"bottom\":{\"label\":{fillStyle: 'white'},\"rect\":{fillStyle: \"#344459\", opacity: 0.7, radius: 5}},\"left\":{\"label\":{fillStyle: 'white'},\"rect\":{fillStyle: \"#344459\", opacity: 0.7, radius: 5}}}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "gesture": "binding",
+                        "axes": "object"
+                    },
+                    "name": "MyCrosshairInteraction",
+                    "designerId": "d2a2870c-68a0-46ee-8f99-5ba350a71c22"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "this.updateUI(\"2020-01-01\", \"2020-12-31\", \"AAPL\");"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "8eff6a94-2148-4a10-8688-d443047291a3"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelRender",
+                "implHandler": [
+                    "console.log(\"onPanelRender\");",
+                    "this.chart = Ext.ComponentQuery.query('#mycandlestickchart')[0];",
+                    "this.initMarketStackStore();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPanelRender",
+            "designerId": "97290496-e86a-4a0c-b379-3b22fd864374"
+        }
+    ]
+}

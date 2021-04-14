@@ -1,0 +1,21 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "alternateClassName": [
+            "homepanel"
+        ],
+        "designer|userAlias": "ohlccharts",
+        "designer|userClassName": "OHLCChartsViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "alternateClassName": "typedarray"
+    },
+    "designerId": "bb5af113-2f75-4894-b3df-7cef3d9578bf"
+}
